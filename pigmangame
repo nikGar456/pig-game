@@ -1,0 +1,31 @@
+import random
+
+pig = ""
+pigs = 0
+endScore = 0
+pigScore = 0
+
+name = input("What is your name?")
+print("Goodluck!", name)
+
+while endScore < 25:
+    print("Score: {} ".format(pigScore, endScore, pigs))
+    pig = input("pig_game = ").lower()
+
+    if pig == "roll_dice":
+        roll_dice = random.randint(1, 6)
+        if roll_dice == 1:
+            print("You got a 1. Congradulation!")
+            pigScore = 0
+            pigs = pigs + 1
+        else:
+            pigScore = pigScore + roll_dice
+
+    elif pig == "end":
+        print("You are done playing")
+        break
+
+    else:
+        print("I don't understand this function")
+
+print("end score: {} in {} pigs ({})".format(endScore, pigs, endScore / pigs))
